@@ -19,13 +19,16 @@ export default function Login() {
     }
 
     try {
+      console.log("Conectando al backend...");
       const response = await fetch('http://localhost:4000/api/auth/login', {
+
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ correo, contraseña: contrasena }),
       });
 
       const data = await response.json();
+      console.log(data)
       if (!response.ok) throw new Error(data.message || 'Error en login');
 
       localStorage.setItem('token', data.token);
