@@ -5,6 +5,7 @@ import Dashboard from "./pages/dashboard";
 import Contabilidad from "./pages/Contabilidad";
 import LibroDiario from "./pages/LibroDiario";
 import Bancos from "./pages/Bancos";
+import Cocina from "./pages/Cocina";
 import PrivateRoute from "./components/PrivateRoute"; // ⬅️ Nuevo import
 import Register from "./pages/Register";
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/contabilidad" element={<Contabilidad />} />
         <Route path="/libro-diario" element={<LibroDiario />} />
         <Route path="/bancos" element={<Bancos />} />
+        <Route path="/cocina" element={<Cocina />} />
       </Routes>
     </Router>
   );

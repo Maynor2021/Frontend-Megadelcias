@@ -4,38 +4,59 @@ import { FaUser, FaEnvelope, FaLock } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import logo from '../assets/logo-megadelicias.png';
 
+
 export default function Register() {
   const [nombre, setNombre] = useState('');
+  const [usuario, setUsuario] = useState('');
   const [correo, setCorreo] = useState('');
-  const [contrasena, setContrasena] = useState('');
-  const [rol, setRol] = useState('mesero'); // Puedes cambiar los roles disponibles
+  const [contraseña, setContrasena] = useState('');
+  const [rol, setRol] = useState('mesero');
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    if (!nombre || !correo || !contrasena || !rol) {
-      setError('Todos los campos son obligatorios');
-      return;
-    }
+  if (!nombre || !usuario || !correo || !contraseña || !rol) {
+    setError('Todos los campos son obligatorios');
+    return;
+  }
 
-    try {
-      const response = await fetch('http://localhost:4000/api/auth/register', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ nombre, correo, contraseña: contrasena, rol }),
-      });
-
-      const data = await response.json();
-      if (!response.ok) throw new Error(data.message || 'Error en registro');
-
-      alert('Usuario registrado con éxito');
-      navigate('/login');
-    } catch (err) {
-      setError(err.message);
-    }
+  // Mapear rol a rolID
+  const rolMapping = {
+    'mesero': 1,
+    'admin': 2,
+    'cocinero': 3,
+    'caja': 4
   };
+
+  // Debug: verificar qué se va a enviar
+  const dataToSend = { 
+    nombreCompleto: nombre,    // ¡Asegúrate de que esto esté aquí!
+    usuario: usuario,          
+    correo: correo, 
+    contraseña: contraseña, 
+    rolID: rolMapping[rol]     
+  };
+
+  console.log('Datos que se van a enviar:', dataToSend);
+
+  try {
+    const response = await fetch('http://localhost:4000/api/auth/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(dataToSend),
+    });
+
+    const data = await response.json();
+    if (!response.ok) throw new Error(data.message || 'Error en registro');
+
+    alert('Usuario registrado con éxito');
+    navigate('/login');
+  } catch (err) {
+    setError(err.message);
+  }
+};
 
   return (
     <div className="flex h-screen">
@@ -62,7 +83,7 @@ export default function Register() {
             <p className="text-red-500 text-sm text-center mb-4">{error}</p>
           )}
 
-          {/* Nombre */}
+          {/* Nombre Completo */}
           <div className="mb-4 relative">
             <FaUser className="absolute top-3 left-3 text-gray-400" />
             <input
@@ -70,6 +91,18 @@ export default function Register() {
               placeholder="Nombre completo"
               value={nombre}
               onChange={(e) => setNombre(e.target.value)}
+              className="pl-10 pr-4 py-2 w-full border rounded focus:outline-none focus:ring-2 focus:ring-rose-500"
+            />
+          </div>
+
+          {/* Usuario */}
+          <div className="mb-4 relative">
+            <FaUser className="absolute top-3 left-3 text-gray-400" />
+            <input
+              type="text"
+              placeholder="Nombre de usuario"
+              value={usuario}
+              onChange={(e) => setUsuario(e.target.value)}
               className="pl-10 pr-4 py-2 w-full border rounded focus:outline-none focus:ring-2 focus:ring-rose-500"
             />
           </div>
@@ -92,7 +125,7 @@ export default function Register() {
             <input
               type="password"
               placeholder="Contraseña"
-              value={contrasena}
+              value={contraseña}
               onChange={(e) => setContrasena(e.target.value)}
               className="pl-10 pr-4 py-2 w-full border rounded focus:outline-none focus:ring-2 focus:ring-rose-500"
             />

@@ -37,6 +37,8 @@ export default function Dashboard() {
   const handleModuleClick = (label) => {
     if (label === 'Contabilidad') {
       navigate('/contabilidad');
+    } else if (label === 'Cocina') {
+      navigate('/cocina');
     } else {
       // Para otros módulos, mostrar mensaje de "próximamente"
       alert(`🚧 Módulo "${label}" en desarrollo`);
