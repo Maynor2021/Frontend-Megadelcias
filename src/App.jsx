@@ -8,6 +8,8 @@ import Bancos from "./pages/Bancos";
 import Cocina from "./pages/Cocina";
 import PrivateRoute from "./components/PrivateRoute"; // ⬅️ Nuevo import
 import Register from "./pages/Register";
+import VistaPlatos from "./pages/Platos";
+
 
 
 
@@ -25,6 +27,7 @@ function App() {
         <Route path="/libro-diario" element={<LibroDiario />} />
         <Route path="/bancos" element={<Bancos />} />
         <Route path="/cocina" element={<Cocina />} />
+        <Route path="/Platos" element={<VistaPlatos />} />
       </Routes>
     </Router>
   );

@@ -39,7 +39,10 @@ export default function Dashboard() {
       navigate('/contabilidad');
     } else if (label === 'Cocina') {
       navigate('/cocina');
-    } else {
+    } else if (label === 'Platos'){
+      navigate ('/Platos')
+    }
+     else {
       // Para otros módulos, mostrar mensaje de "próximamente"
       alert(`🚧 Módulo "${label}" en desarrollo`);
     }
@@ -52,7 +55,8 @@ export default function Dashboard() {
     { label: 'Inventario', icon: <FaClipboardList size={50} /> },
     { label: 'Cocina', icon: <FaBoxOpen size={50} /> },
     { label: 'Reportes', icon: <FaChartBar size={50} /> },
-    { label: 'Contabilidad', icon: <FaCalculator size={50} /> }
+    { label: 'Contabilidad', icon: <FaCalculator size={50} /> },
+    { label: 'Platos', icon: <FaClipboardList size={50} /> }
   ];
 
   return (
