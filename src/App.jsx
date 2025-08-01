@@ -8,6 +8,7 @@ import AdminUsers from "./pages/AdminUsers";
 import Contabilidad from "./pages/Contabilidad";
 import LibroDiario from "./pages/LibroDiario";
 import Bancos from "./pages/Bancos";
+import CajaPanel from './pages/CajaPanel';
 
 const CajaPage = () => <h1>Panel de Caja</h1>;
 const MeseroPage = () => <h1>Panel de Mesero</h1>;
@@ -66,14 +67,16 @@ function App() {
           }
         />
 
+      
         <Route
           path="/caja"
           element={
-            <RoleRoute rol={["caja", "mesero", "admin"]}>
-              <CajaPage />
-            </RoleRoute>
-          }
+            <RoleRoute rol={['admin', 'caja']}>
+              <CajaPanel />
+           </RoleRoute>
+         }
         />
+
 
         <Route
           path="/mesero"
