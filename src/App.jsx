@@ -8,9 +8,13 @@ import Bancos from "./pages/Bancos";
 import Cocina from "./pages/Cocina";
 import PrivateRoute from "./components/PrivateRoute"; // ⬅️ Nuevo import
 import Register from "./pages/Register";
+<<<<<<< HEAD
 import EstadoResultados from "./pages/Estadoderesultado";
 import VistaPlatos from "./pages/Platos";
 
+=======
+import VistaPlatos from "./pages/Platos";
+>>>>>>> Platointerfaz
 
 
 
@@ -28,11 +32,15 @@ function App() {
         <Route path="/libro-diario" element={<LibroDiario />} />
         <Route path="/bancos" element={<Bancos />} />
         <Route path="/cocina" element={<Cocina />} />
+<<<<<<< HEAD
 
          <Route path="/EstadodeResultado" element={<EstadoResultados />} />
 
         <Route path="/Platos" element={<VistaPlatos />} />
 
+=======
+        <Route path="/Platos" element={<VistaPlatos />} />
+>>>>>>> Platointerfaz
       </Routes>
     </Router>
   );
