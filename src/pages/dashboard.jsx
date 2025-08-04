@@ -8,6 +8,7 @@ import {
   FaBoxOpen,
   FaChartBar,
   FaCalculator,
+
 } from 'react-icons/fa';
 import logo from '../assets/logo-megadelicias.png';
 import { useNavigate } from 'react-router-dom';
@@ -46,13 +47,14 @@ export default function Dashboard() {
   };
 
   const options = [
-    { label: 'Administrador', icon: <FaUserCog size={50} /> },
-    { label: 'Caja', icon: <FaCashRegister size={50} /> },
-    { label: 'Mesero', icon: <FaUtensils size={50} /> },
-    { label: 'Inventario', icon: <FaClipboardList size={50} /> },
-    { label: 'Cocina', icon: <FaBoxOpen size={50} /> },
-    { label: 'Reportes', icon: <FaChartBar size={50} /> },
-    { label: 'Contabilidad', icon: <FaCalculator size={50} /> }
+    { label: "Administrador", icon: <FaUserCog size={50} /> },
+    { label: "Caja", icon: <FaCashRegister size={50} /> },
+    { label: "Mesero", icon: <FaUtensils size={50} /> },
+    { label: "Inventario", icon: <FaClipboardList size={50} /> },
+    { label: "Cocina", icon: <FaBoxOpen size={50} /> },
+    { label: "Reportes", icon: <FaChartBar size={50} /> },
+    { label: "Contabilidad", icon: <FaCalculator size={50} /> },
+
   ];
 
   return (

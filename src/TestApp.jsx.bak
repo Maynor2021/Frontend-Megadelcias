@@ -1,0 +1,14 @@
+// Test component
+import React from 'react';
+
+export default function TestApp() {
+  return (
+    <div style={{padding: '20px'}}>
+      <h1 style={{color: 'red'}}>¡Aplicación funcionando!</h1>
+      <p>Si ves esto, el problema no es de React sino de los estilos.</p>
+      <button style={{background: 'blue', color: 'white', padding: '10px'}}>
+        Botón de prueba
+      </button>
+    </div>
+  );
+}

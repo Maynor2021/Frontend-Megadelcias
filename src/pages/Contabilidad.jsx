@@ -113,6 +113,8 @@ export default function Contabilidad() {
       navigate('/libro-diario');
     } else if (opcionId === 'bancos') {
       navigate('/bancos');
+    } else if (opcionId === 'reportes') {
+      navigate('/EstadodeResultado');
     } else {
       setVistaActual(opcionId);
       // Aquí puedes agregar navegación a sub-vistas específicas más tarde
