@@ -13,11 +13,6 @@ import EstadoResultados from "./pages/Estadoderesultado";
 import VistaPlatos from "./pages/Platos";
 
 
-import VistaPlatos from "./pages/Platos";
-
-
-
-
 function App() {
   return (
     <Router>

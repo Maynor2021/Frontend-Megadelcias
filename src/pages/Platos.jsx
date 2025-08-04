@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
- HEAD
 const API_URL = 'http://localhost:4000/api'; // cambia esto por tu URL real
 
 
