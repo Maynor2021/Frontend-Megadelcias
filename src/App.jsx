@@ -9,6 +9,8 @@ import Cocina from "./pages/Cocina";
 import PrivateRoute from "./components/PrivateRoute"; // ⬅️ Nuevo import
 import Register from "./pages/Register";
 import EstadoResultados from "./pages/Estadoderesultado";
+import VistaPlatos from "./pages/Platos";
+
 
 
 
@@ -26,7 +28,11 @@ function App() {
         <Route path="/libro-diario" element={<LibroDiario />} />
         <Route path="/bancos" element={<Bancos />} />
         <Route path="/cocina" element={<Cocina />} />
+<<<<<<< HEAD
          <Route path="/EstadodeResultado" element={<EstadoResultados />} />
+=======
+        <Route path="/Platos" element={<VistaPlatos />} />
+>>>>>>> 2f4546f9333c99664460718f7677ec6a6dc4cef1
       </Routes>
     </Router>
   );
