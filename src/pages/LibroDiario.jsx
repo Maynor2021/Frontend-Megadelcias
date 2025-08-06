@@ -80,7 +80,7 @@ export default function LibroDiario() {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
-      });
+      }); 
 
       // Agrupar por asiento
       const asientosAgrupados = {};
