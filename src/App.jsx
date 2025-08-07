@@ -9,6 +9,7 @@ import Contabilidad from "./pages/Contabilidad";
 import LibroDiario from "./pages/LibroDiario";
 import Bancos from "./pages/Bancos";
 import CajaPanel from './pages/CajaPanel';
+import MeseroPanel from "./pages/MeseroPanel";
 
 const CajaPage = () => <h1>Panel de Caja</h1>;
 const MeseroPage = () => <h1>Panel de Mesero</h1>;
@@ -82,7 +83,7 @@ function App() {
           path="/mesero"
           element={
             <RoleRoute rol={["mesero", "admin"]}>
-              <MeseroPage />
+              <MeseroPanel />
             </RoleRoute>
           }
         />
