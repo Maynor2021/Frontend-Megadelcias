@@ -12,7 +12,8 @@ import {
   FaBook,
   FaBalanceScale,
   FaColumns,
-  FaUniversity
+  FaUniversity,
+  FaBuilding
 } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import logo from '../assets/logo-megadelicias.png';
@@ -48,6 +49,14 @@ export default function Contabilidad() {
       descripcion: 'Verificación de sumas y saldos contables',
       icono: <FaBalanceScale size={40} />,
       color: 'from-cyan-400 to-cyan-600',
+      categoria: 'contable'
+    },
+    {
+      id: 'balance-general',
+      titulo: 'Balance General',
+      descripcion: 'Estado de situación financiera de la empresa',
+      icono: <FaBuilding size={40} />,
+      color: 'from-blue-400 to-blue-600',
       categoria: 'contable'
     },
     {
@@ -115,6 +124,8 @@ export default function Contabilidad() {
       navigate('/bancos');
     } else if (opcionId === 'reportes') {
       navigate('/EstadodeResultado');
+    } else if (opcionId === 'balance-general') {
+      navigate('/balance-general');
     } else {
       setVistaActual(opcionId);
       // Aquí puedes agregar navegación a sub-vistas específicas más tarde

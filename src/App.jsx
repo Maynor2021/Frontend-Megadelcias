@@ -10,8 +10,8 @@ import PrivateRoute from "./components/PrivateRoute"; // ⬅️ Nuevo import
 import Register from "./pages/Register";
 
 import EstadoResultados from "./pages/Estadoderesultado";
+import BalanceGeneral from "./pages/BalanceGeneral";
 import VistaPlatos from "./pages/Platos";
-
 
 function App() {
   return (
@@ -28,14 +28,10 @@ function App() {
         <Route path="/bancos" element={<Bancos />} />
         <Route path="/cocina" element={<Cocina />} />
 
-
-         <Route path="/EstadodeResultado" element={<EstadoResultados />} />
-
-        <Route path="/Platos" element={<VistaPlatos />} />
-
+        <Route path="/EstadodeResultado" element={<EstadoResultados />} />
+        <Route path="/balance-general" element={<BalanceGeneral />} />
 
         <Route path="/Platos" element={<VistaPlatos />} />
-
       </Routes>
     </Router>
   );

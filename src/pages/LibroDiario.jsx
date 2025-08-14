@@ -265,7 +265,7 @@ const guardarAsiento = async () => {
       );
       alert('Asiento actualizado exitosamente');
     } else {
-      await axios.post(`${API_URL}/contabilidad/asientos`, 
+      await axios.post(`${API_URL}/contabilidad/asientosasientoscreate`, 
         datosAsiento,
         {
           headers: {
